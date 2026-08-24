@@ -15,7 +15,7 @@ export function useCVDownload() {
     }
 
     const link = document.createElement("a");
-    link.href = "/assets/CV_Richard_Diatta.pdf";
+    link.href = "/assets/cv.pdf";
     link.download = "CV_Richard_Diatta.pdf";
     link.click();
   }, []);
