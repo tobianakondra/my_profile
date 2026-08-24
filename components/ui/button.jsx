@@ -1,25 +1,26 @@
-import * as React from "react"
-import { Slot } from "@radix-ui/react-slot"
+import * as React from "react";
+import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-full text-base font semibold ring-offset-white transition-colors",
+  "inline-flex items-center justify-center whitespace-nowrap rounded-xl text-sm font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        default:
-          "bg-accent text-primary hover:bg-accent-hover",
-        primary: "bg-primary",
-        outline: "border border-accent bg-transparent text-accent hover:bg-accent-hover hover:text-primary",
-
-
+        default: "bg-accent text-accent-foreground hover:bg-accent-hover shadow-lg shadow-accent/25",
+        primary: "bg-primary text-primary-foreground hover:bg-primary/90",
+        outline: "border border-border bg-transparent hover:bg-primary/50 hover:text-accent",
+        ghost: "hover:bg-primary/50 hover:text-accent",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
       },
       size: {
-        default: "h-[44px] px-6",
-        sm: "h-[48px] px-6",
-        lg: "h-[56px] px-8 text-sm uppercase tracking-[2px]",
+        default: "h-11 px-6",
+        sm: "h-9 px-4 text-xs",
+        lg: "h-12 px-8 text-base",
+        xl: "h-14 px-10 text-lg",
+        icon: "h-11 w-11",
       },
     },
     defaultVariants: {
@@ -27,7 +28,7 @@ const buttonVariants = cva(
       size: "default",
     },
   }
-)
+);
 
 function Button({
   className,
@@ -36,14 +37,15 @@ function Button({
   asChild = false,
   ...props
 }) {
-  const Comp = asChild ? Slot : "button"
+  const Comp = asChild ? Slot : "button";
 
   return (
     <Comp
       data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}
-      {...props} />
+      {...props}
+    />
   );
 }
 
-export { Button, buttonVariants }
+export { Button, buttonVariants };

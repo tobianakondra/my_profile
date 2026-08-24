@@ -1,12 +1,7 @@
 import { JetBrains_Mono as jetBrainsMono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
-import SideNav from "@/components/SideNav";
-// import PageTransition from "@/components/PageTransition";
-// import StairTransition from "@/components/StairTransition";
-import "@/lib/localStorage";
 import Script from "next/script";
-import CustomCursor from "@/components/CustomCursor";
 
 const jetBrainsMonoFont = jetBrainsMono({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
@@ -15,8 +10,26 @@ const jetBrainsMonoFont = jetBrainsMono({
 });
 
 export const metadata = {
-  title: "Cherif",
-  description: "Mon site portfolio",
+  title: "Richard Diatta — Développeur Fullstack React, Next.js & Node.js",
+  description: "Richard Diatta, développeur Fullstack spécialisé React, Next.js, Node.js, Firebase, Supabase. Freelance & CDI — Architectures scalables, temps réel & CI/CD.",
+  keywords: ["Développeur Fullstack", "React", "Next.js", "Node.js", "Firebase", "Supabase", "TypeScript", "Freelance", "France"],
+  authors: [{ name: "Richard Diatta" }],
+  openGraph: {
+    title: "Richard Diatta — Développeur Fullstack",
+    description: "Architectures scalables, temps réel & CI/CD",
+    type: "website",
+    locale: "fr_FR",
+    siteName: "Richard Diatta Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Richard Diatta — Développeur Fullstack",
+    description: "React, Next.js, Node.js, Firebase, Supabase",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -33,8 +46,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      {/* ✅ Google Analytics */}
+    <html lang="fr">
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-7XFCGB069Y"
         strategy="afterInteractive"
@@ -47,12 +59,8 @@ export default function RootLayout({ children }) {
           gtag('config', 'G-7XFCGB069Y');
         `}
       </Script>
-      <body className={`${jetBrainsMonoFont.variable} `}>
-        <CustomCursor />
-        <Header/>
-        <SideNav />
-        {/* <StairTransition /> */}
-        {/* <PageTransition>{children}</PageTransition> */}
+      <body className={`${jetBrainsMonoFont.variable} antialiased`}>
+        <Header />
         {children}
       </body>
     </html>

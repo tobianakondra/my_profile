@@ -1,40 +1,42 @@
-const { Container } = require('lucide-react');
-
-/** @type {import('tailwind.css').Config} */
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-    darkMode: ["class"],
-    content: [
-      "./app/**/*.{js,jsx,ts,tsx}",
-      "./components/**/*.{js,jsx,ts,tsx}",
-      // ...
-    ],
-    prefix: "",
-    theme: {
-      Container:{
-        center: true,
-        padding: "15px",
-      },
-        screens: {
-          sm: "640px",
-          md: "768px",
-          lg: "960px",
-          xl: "1200px",
+  darkMode: ["class"],
+  content: [
+    "./app/**/*.{js,jsx,ts,tsx}",
+    "./components/**/*.{js,jsx,ts,tsx}",
+  ],
+  prefix: "",
+  theme: {
+    container: {
+      center: true,
+      padding: "15px",
+    },
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "960px",
+      xl: "1200px",
+    },
+    fontFamily: {
+      primary: "var(--font-jetbrains-mono)",
+    },
+    extend: {
+      colors: {
+        primary: '#0f172a',      // Navy 950
+        secondary: '#1e293b',    // Navy 900
+        tertiary: '#334155',     // Navy 700
+        accent: {
+          DEFAULT: '#1d4ed8',    // Blue 700
+          hover: '#1e40af',      // Blue 800
+          light: '#3b82f6',      // Blue 500
         },
-      fontFamily: {
-        primary: "var(--font-jetbrains-mono)",
+        muted: '#64748b',        // Navy 500
+        'muted-fg': '#94a3b8',   // Navy 400
+        border: '#1e293b',       // Navy 900
+        background: '#020617',   // Navy 950 darker
+        surface: '#0f172a',      // Navy 950
+        card: '#1e293b',         // Navy 900
       },
-      extend:{
-        colors: {
-            primary: '#121217',
-            accent:{DEFAULT:'#00ff99',hover:"#00e187"},
-        }
-      }
-      },
-      extend: {
-        fontFamily: {
-          primary: ["var(--font-jetbrains-mono)", "monospace"],
-        },
-      },
-    }
-    // ...autres options si besoin...
-  
+    },
+  },
+}

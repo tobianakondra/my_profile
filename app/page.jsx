@@ -1,22 +1,19 @@
 "use client";
 import Hero from "@/components/hero"
-import Services from "@/components/services";
-import Resume from "@/components/resume";
-import Projets from "@/components/projets";
-import Contact from "@/components/contact";
+import About from "@/components/about"
+import Projets from "@/components/projets"
+import Contact from "@/components/contact"
 
 
 const Home = () => {
   return (
-  <div className="flex flex-col space-y-12 sm:space-y-30">
+  <div className="flex flex-col">
     
     <Hero/>
 
+    <About/>
+
     <Projets/>
-
-    <Services/>
-
-    <Resume/>
 
     <Contact/>
 
@@ -24,4 +21,3 @@ const Home = () => {
   );
 }
 export default Home;
-

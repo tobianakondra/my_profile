@@ -1,36 +1,37 @@
-import Link from 'next/link';
+"use client";
+
+import Link from "next/link";
 import { Button } from "./ui/button";
+import Nav from "./Nav";
+import MobileNav from "./MobileNav";
 
-// components
-import Nav from './Nav';
-import MobileNav from './MobileNav';
+const Header = () => {
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
+      <div className="max-w-7xl px-4 sm:px-8 mx-auto">
+        <div className="flex justify-between items-center h-16 lg:h-20">
+          <Link href="/" className="group flex items-center">
+            <span className="text-xl lg:text-2xl font-semibold text-foreground transition-colors duration-300 group-hover:text-accent">
+              Richard Diatta
+            </span>
+          </Link>
 
-const header = () => {
-    return (
-        <header className='py-5 lg:py-8 text-white'>
-            <div className='max-w-7xl px-4 sm:px-8 mx-auto flex justify-between items-center'>
-                {/* Logo */}
-                <Link href="/" className='group flex items-center'>
-                    <h1 className='text-4xl font-semibold transition-transform duration-300 group-hover:scale-105'>
-                        Cherif<span className='text-accent inline-block transition-transform duration-300 group-hover:scale-125 group-hover:translate-x-0.5'>.</span>
-                    </h1>
-                </Link>
-                {/* Navigation and hire me button */}
-                <div className="hidden lg:flex items-center gap-8">
-                    <Nav />
-                    <Link href="#contact">
-                        <Button className="hover:translate-x-2 hover:scale-[1.03] hover:shadow-[0_0_15px_rgba(0,255,153,0.4)] transition-all duration-300">Engagez-moi</Button>
-                    </Link>
-                </div>
+          <div className="hidden lg:flex items-center gap-8">
+            <Nav />
+            <Link href="#contact">
+              <Button className="gap-2 bg-accent hover:bg-accent-hover text-accent-foreground shadow-lg shadow-accent/25">
+                Me contacter
+              </Button>
+            </Link>
+          </div>
 
-                {/* Mobile Navigation */}
-                <div className="lg:hidden">
-                    <MobileNav />
-                </div>
-
-            </div>
-        </header>
-    )
+          <div className="lg:hidden">
+            <MobileNav />
+          </div>
+        </div>
+      </div>
+    </header>
+  );
 };
 
-export default header;
+export default Header;
