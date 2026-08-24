@@ -150,8 +150,11 @@
   }
 
   @media (min-width: 768px) {
-    *, *::before, *::after, html, body, a, button, input, textarea, select {
+    html, body, a, button, [role="button"], .cursor-pointer {
       cursor: none !important;
+    }
+    input, textarea, select {
+      cursor: auto !important;
     }
   }
 
@@ -251,5 +254,9 @@
 
   .focus-ring {
     @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
+  .cursor-fixed {
+    transform: translate3d(var(--cursor-x, 0), var(--cursor-y, 0), 0) translate(-50%, -50%);
   }
 }

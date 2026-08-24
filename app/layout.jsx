@@ -1,6 +1,7 @@
 import { JetBrains_Mono as jetBrainsMono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
+import CustomCursor from "@/components/CustomCursor";
 import Script from "next/script";
 
 const jetBrainsMonoFont = jetBrainsMono({
@@ -60,6 +61,7 @@ export default function RootLayout({ children }) {
         `}
       </Script>
       <body className={`${jetBrainsMonoFont.variable} antialiased`}>
+        <CustomCursor />
         <Header />
         {children}
       </body>
