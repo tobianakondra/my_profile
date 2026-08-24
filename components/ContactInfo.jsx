@@ -30,8 +30,8 @@ const info = [
 ];
 
 const socials = [
-  { icon: FaGithub, label: "GitHub", href: "https://github.com/" },
-  { icon: FaLinkedin, label: "LinkedIn", href: "https://linkedin.com/" },
+  { icon: FaGithub, label: "GitHub", href: "https://github.com/tobianakondra" },
+  { icon: FaLinkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/richard-claude-emile-diatta-328209327/" },
 ];
 
 export function ContactInfo() {
