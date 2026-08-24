@@ -4,18 +4,12 @@ import {
   FaCode,
   FaServer,
   FaDatabase,
-  FaCloud,
-  FaMobileAlt,
-  FaLock,
 } from "react-icons/fa";
 
 const skills = [
   { icon: FaCode, label: "Frontend", stack: ["React", "Next.js", "TypeScript", "Tailwind CSS"] },
   { icon: FaServer, label: "Backend", stack: ["Node.js", "Express", "REST API", "GraphQL"] },
   { icon: FaDatabase, label: "Données & Temps réel", stack: ["Firebase", "Supabase", "PostgreSQL", "Prisma"] },
-  { icon: FaCloud, label: "DevOps & Cloud", stack: ["Vercel", "Docker", "GitHub Actions", "CI/CD"] },
-  { icon: FaMobileAlt, label: "Mobile", stack: ["React Native", "Expo", "PWA"] },
-  { icon: FaLock, label: "Sécurité & Auth", stack: ["NextAuth", "JWT", "OAuth 2.0", "Row Level Security"] },
 ];
 
 const About = () => {
@@ -38,7 +32,7 @@ const About = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {skills.map((skill, index) => (
             <motion.article
               key={skill.label}
