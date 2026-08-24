@@ -60,30 +60,6 @@ const About = () => {
             </motion.article>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-          className="mt-16 lg:mt-24 p-8 rounded-2xl bg-primary/50 border border-border"
-        >
-          <h3 className="text-xl font-semibold text-foreground mb-4 text-center">Mon parcours en bref</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div className="p-4 rounded-xl bg-card border border-border">
-              <p className="text-3xl font-bold text-accent">3+</p>
-              <p className="text-sm text-muted-fg mt-1">Années d'expérience</p>
-            </div>
-            <div className="p-4 rounded-xl bg-card border border-border">
-              <p className="text-3xl font-bold text-accent">20+</p>
-              <p className="text-sm text-muted-fg mt-1">Projets livrés</p>
-            </div>
-            <div className="p-4 rounded-xl bg-card border border-border">
-              <p className="text-3xl font-bold text-accent">100%</p>
-              <p className="text-sm text-muted-fg mt-1">Taux de satisfaction</p>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
