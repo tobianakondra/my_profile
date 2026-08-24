@@ -3,7 +3,7 @@
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { CiMenuFries, CiClose } from "react-icons/ci";
+import { CiMenuFries, CiSquareRemove } from "react-icons/ci";
 
 const links = [
   {
@@ -33,7 +33,7 @@ const MobileNav = () => {
         <div className="flex justify-end mb-8">
           <SheetTrigger asChild>
             <button className="p-2 rounded-lg bg-primary/50 border border-border text-muted-fg hover:bg-primary hover:border-accent/50 hover:text-accent transition-all duration-300" aria-label="Fermer">
-              <CiClose className="text-[24px]" />
+              <CiSquareRemove className="text-[24px]" />
             </button>
           </SheetTrigger>
         </div>

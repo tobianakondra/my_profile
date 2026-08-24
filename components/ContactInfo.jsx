@@ -12,19 +12,19 @@ const info = [
   {
     icon: FaEnvelope,
     title: "Email",
-    description: "richard.diatta@email.com",
-    href: "mailto:richard.diatta@email.com",
+    description: "privatehat80@gmail.com",
+    href: "mailto:privatehat80@gmail.com",
   },
   {
     icon: FaPhoneAlt,
     title: "Téléphone",
-    description: "+33 6 00 00 00 00",
-    href: "tel:+33600000000",
+    description: "+221 78 173 73 85",
+    href: "tel:+221781737385",
   },
   {
     icon: FaMapMarkerAlt,
     title: "Localisation",
-    description: "France — Disponible à distance",
+    description: "Ziguinchor — Disponible à distance",
     href: null,
   },
 ];

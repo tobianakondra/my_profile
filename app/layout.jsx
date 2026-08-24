@@ -12,7 +12,7 @@ const jetBrainsMonoFont = jetBrainsMono({
 
 export const metadata = {
   title: "Richard Diatta — Développeur Fullstack React, Next.js & Node.js",
-  description: "Richard Diatta, développeur Fullstack spécialisé React, Next.js, Node.js, Firebase, Supabase. Freelance & CDI — Architectures scalables, temps réel & CI/CD.",
+  description: "Richard Diatta, développeur Fullstack spécialisé React, Next.js, Node.js, Firebase, Supabase. Freelance & CDI — Architectures scalables, temps réel.",
   keywords: ["Développeur Fullstack", "React", "Next.js", "Node.js", "Firebase", "Supabase", "TypeScript", "Freelance", "France"],
   authors: [{ name: "Richard Diatta" }],
   openGraph: {
