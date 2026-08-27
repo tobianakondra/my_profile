@@ -9,6 +9,9 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { UniversysWebCard } from "./UniversysWebCard";
+import { UniversysMobileCard } from "./UniversysMobileCard";
+import { UniversysSidebar } from "./UniversysSidebar";
 
 const projects = [
   {
@@ -46,8 +49,6 @@ const projects = [
 ];
 
 const ProjectCard = ({ project, index }) => {
-  const isEven = index % 2 === 0;
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -57,30 +58,14 @@ const ProjectCard = ({ project, index }) => {
       whileHover={{ y: -8 }}
       className="group relative flex flex-col lg:flex-row rounded-2xl bg-card border border-border overflow-hidden transition-all duration-300 hover:border-accent/50 hover:shadow-[0_20px_40px_rgba(29,78,216,0.15)]"
     >
-      {/* Image à gauche (sur desktop) ou en haut (mobile) */}
       <div className="relative lg:w-1/2 w-full bg-primary/50 overflow-hidden flex-shrink-0">
-        <div className="flex flex-col lg:flex-row h-full">
-          {/* Image principale (desktop/web) */}
-          <div className="lg:w-1/2 w-full relative min-h-[300px]">
-            <Image
-              src={project.image}
-              alt={`${project.title} - Version Web`}
-              fill
-              className="object-contain transition-transform duration-500 group-hover:scale-102 p-4 lg:p-6"
-              sizes="(max-width: 1024px) 100vw, 25vw"
-            />
-          </div>
-          {/* Image mobile */}
-          <div className="lg:w-1/2 w-full relative min-h-[300px] lg:block hidden">
-            <Image
-              src={project.imageMobile}
-              alt={`${project.title} - Version Mobile`}
-              fill
-              className="object-contain transition-transform duration-500 group-hover:scale-102 p-4 lg:p-6"
-              sizes="(max-width: 1024px) 100vw, 25vw"
-            />
-          </div>
-        </div>
+        <Image
+          src={project.image}
+          alt={project.title}
+          fill
+          className="object-contain transition-transform duration-500 group-hover:scale-102 p-4 lg:p-8"
+          sizes="(max-width: 1024px) 100vw, 50vw"
+        />
         <div className="absolute top-4 left-4 flex gap-2 z-10">
           <span className="px-3 py-1 rounded-lg bg-card/90 backdrop-blur border border-border text-xs font-mono font-bold text-accent">
             {project.num}
@@ -91,7 +76,6 @@ const ProjectCard = ({ project, index }) => {
         </div>
       </div>
 
-      {/* Contenu à droite (sur desktop) ou en bas (mobile) */}
       <div className="lg:w-1/2 w-full p-6 lg:p-8 flex flex-col justify-between">
         <div>
           <h3 className="text-2xl lg:text-3xl font-semibold text-foreground mb-4 group-hover:text-accent transition-colors duration-300">
@@ -160,6 +144,26 @@ const ProjectCard = ({ project, index }) => {
   );
 };
 
+const UniversysBento = ({ project }) => {
+  const { title } = project;
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="grid grid-cols-1 lg:grid-cols-3 gap-6"
+      data-project={title}
+    >
+      <div className="lg:col-span-2 grid grid-cols-1 gap-6">
+        <UniversysWebCard project={project} />
+        <UniversysMobileCard project={project} />
+      </div>
+      <UniversysSidebar project={project} />
+    </motion.div>
+  );
+};
+
 const Projets = () => {
   return (
     <section id="projets" className="py-20 lg:py-32 bg-background">
@@ -176,7 +180,9 @@ const Projets = () => {
         </motion.div>
 
         <div className="flex flex-col gap-12">
-          {projects.map((project, index) => (
+          <UniversysBento project={projects[0]} />
+
+          {projects.slice(1).map((project, index) => (
             <ProjectCard key={index} project={project} index={index} />
           ))}
         </div>
