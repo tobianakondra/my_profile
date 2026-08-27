@@ -57,15 +57,14 @@ const ProjectCard = ({ project, index }) => {
       className="group relative flex flex-col lg:flex-row rounded-2xl bg-card border border-border overflow-hidden transition-all duration-300 hover:border-accent/50 hover:shadow-[0_20px_40px_rgba(29,78,216,0.15)]"
     >
       {/* Image à gauche (sur desktop) ou en haut (mobile) */}
-      <div className="relative lg:w-1/2 w-full min-h-[300px] lg:min-h-[400px] bg-primary/50 overflow-hidden flex-shrink-0">
+      <div className="relative lg:w-1/2 w-full bg-primary/50 overflow-hidden flex-shrink-0">
         <Image
           src={project.image}
           alt={project.title}
           fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="object-contain transition-transform duration-500 group-hover:scale-102 p-4 lg:p-8"
           sizes="(max-width: 1024px) 100vw, 50vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/10 to-transparent lg:from-background/95 lg:via-background/5 lg:to-transparent" />
         <div className="absolute top-4 left-4 flex gap-2 z-10">
           <span className="px-3 py-1 rounded-lg bg-card/90 backdrop-blur border border-border text-xs font-mono font-bold text-accent">
             {project.num}
@@ -77,7 +76,7 @@ const ProjectCard = ({ project, index }) => {
       </div>
 
       {/* Contenu à droite (sur desktop) ou en bas (mobile) */}
-      <div className="lg:w-1/2 w-full p-6 lg:p-8 flex flex-col justify-between min-h-[300px] lg:min-h-[400px]">
+      <div className="lg:w-1/2 w-full p-6 lg:p-8 flex flex-col justify-between">
         <div>
           <h3 className="text-2xl lg:text-3xl font-semibold text-foreground mb-4 group-hover:text-accent transition-colors duration-300">
             {project.title}
