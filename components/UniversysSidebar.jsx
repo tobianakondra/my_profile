@@ -14,14 +14,12 @@ export function UniversysSidebar({ project }) {
         <h3 className="text-2xl lg:text-3xl font-semibold text-foreground mb-5 tracking-tight">
           {project.title}
         </h3>
-        <div className="prose prose-invert max-w-none">
-          <p className="text-muted-fg/90 text-lg lg:text-xl leading-relaxed whitespace-pre-wrap">
-            {project.description}
-          </p>
-        </div>
+        <p className="text-muted-fg/90 text-base lg:text-lg leading-[1.8] whitespace-pre-wrap max-w-full">
+          {project.description}
+        </p>
       </div>
 
-      {/* Features & Stack - More compact, side by side on larger screens */}
+      {/* Features & Stack - Side by side */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-8">
         {/* Key Features */}
         <div className="rounded-xl bg-primary/30 border border-border/50 p-5">

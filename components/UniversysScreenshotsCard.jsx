@@ -15,24 +15,24 @@ export function UniversysScreenshotsCard({ project }) {
           <span>EdTech / Temps réel</span>
         </span>
       </div>
-      <div className="flex flex-col lg:flex-row h-full">
+      <div className="flex flex-col lg:flex-row h-full min-h-[400px] lg:min-h-[500px]">
         {/* Web screenshot - 2/3 width on desktop */}
-        <div className="lg:w-2/3 w-full relative min-h-[300px] lg:min-h-[400px] lg:border-r lg:border-border/50">
+        <div className="lg:w-2/3 w-full relative lg:border-r lg:border-border/50">
           <Image
             src={project.image}
             alt={`${project.title} - Version Web`}
             fill
-            className="object-contain p-6 transition-transform duration-500 group-hover:scale-102"
+            className="object-contain p-4 lg:p-6 transition-transform duration-500 group-hover:scale-102"
             sizes="(max-width: 1024px) 100vw, 33vw"
           />
         </div>
         {/* Mobile screenshot - 1/3 width on desktop */}
-        <div className="lg:w-1/3 w-full relative min-h-[300px] lg:min-h-[400px] lg:block hidden">
+        <div className="lg:w-1/3 w-full relative lg:block hidden">
           <Image
             src={project.imageMobile}
             alt={`${project.title} - Version Mobile`}
             fill
-            className="object-contain p-4 transition-transform duration-500 group-hover:scale-102"
+            className="object-contain p-4 lg:p-6 transition-transform duration-500 group-hover:scale-102"
             sizes="(max-width: 1024px) 100vw, 17vw"
           />
         </div>

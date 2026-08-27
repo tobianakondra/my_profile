@@ -151,13 +151,15 @@ const UniversysBento = ({ project }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="grid grid-cols-1 lg:grid-cols-3 gap-6"
+      className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8"
       data-project={title}
     >
-      <div className="lg:col-span-2">
+      <div className="lg:col-span-6">
         <UniversysScreenshotsCard project={project} />
       </div>
-      <UniversysSidebar project={project} />
+      <div className="lg:col-span-6">
+        <UniversysSidebar project={project} />
+      </div>
     </motion.div>
   );
 };
