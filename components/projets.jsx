@@ -13,11 +13,12 @@ import {
 const projects = [
   {
     num: "01",
-    category: "SaaS / Fullstack",
-    title: "Projet en cours",
-    description: "Application SaaS complète avec authentification, paiements, dashboard temps réel et architecture multi-tenant.",
-    stack: ["Next.js", "Node.js", "PostgreSQL", "Prisma", "Stripe", "Tailwind CSS"],
-    image: "/assets/project-placeholder.svg",
+    category: "EdTech / Temps réel",
+    title: "Universys",
+    description:
+      "La gestion universitaire (emplois du temps, suivi des cours, communication étudiants-enseignants) est souvent fragmentée, peu réactive et manque d'outils modernes centralisés. Conception d'une plateforme web et mobile centralisant la gouvernance académique. Elle permet la synchronisation en temps réel des emplois du temps, le suivi pédagogique et la communication fluide, réduisant le désordre organisationnel et améliorant l'expérience des étudiants et des administrations.",
+    stack: ["React", "React Native", "Tailwind CSS", "Firebase", "Temps réel"],
+    image: "/assets/universys.png",
     live: "",
     github: "",
   },
