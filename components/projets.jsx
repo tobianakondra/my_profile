@@ -9,8 +9,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { UniversysWebCard } from "./UniversysWebCard";
-import { UniversysMobileCard } from "./UniversysMobileCard";
+import { UniversysScreenshotsCard } from "./UniversysScreenshotsCard";
 import { UniversysSidebar } from "./UniversysSidebar";
 
 const projects = [
@@ -155,9 +154,8 @@ const UniversysBento = ({ project }) => {
       className="grid grid-cols-1 lg:grid-cols-3 gap-6"
       data-project={title}
     >
-      <div className="lg:col-span-2 grid grid-cols-1 gap-6">
-        <UniversysWebCard project={project} />
-        <UniversysMobileCard project={project} />
+      <div className="lg:col-span-2">
+        <UniversysScreenshotsCard project={project} />
       </div>
       <UniversysSidebar project={project} />
     </motion.div>
