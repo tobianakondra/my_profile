@@ -19,6 +19,7 @@ const projects = [
       "La gestion universitaire (emplois du temps, suivi des cours, communication étudiants-enseignants) est souvent fragmentée, peu réactive et manque d'outils modernes centralisés. Conception d'une plateforme web et mobile centralisant la gouvernance académique. Elle permet la synchronisation en temps réel des emplois du temps, le suivi pédagogique et la communication fluide, réduisant le désordre organisationnel et améliorant l'expérience des étudiants et des administrations.",
     stack: ["React", "React Native", "Tailwind CSS", "Firebase", "Temps réel"],
     image: "/assets/universys.png",
+    imageMobile: "/assets/universys-mobile-student.png",
     live: "",
     github: "",
   },
@@ -58,13 +59,28 @@ const ProjectCard = ({ project, index }) => {
     >
       {/* Image à gauche (sur desktop) ou en haut (mobile) */}
       <div className="relative lg:w-1/2 w-full bg-primary/50 overflow-hidden flex-shrink-0">
-        <Image
-          src={project.image}
-          alt={project.title}
-          fill
-          className="object-contain transition-transform duration-500 group-hover:scale-102 p-4 lg:p-8"
-          sizes="(max-width: 1024px) 100vw, 50vw"
-        />
+        <div className="flex flex-col lg:flex-row h-full">
+          {/* Image principale (desktop/web) */}
+          <div className="lg:w-1/2 w-full relative min-h-[300px]">
+            <Image
+              src={project.image}
+              alt={`${project.title} - Version Web`}
+              fill
+              className="object-contain transition-transform duration-500 group-hover:scale-102 p-4 lg:p-6"
+              sizes="(max-width: 1024px) 100vw, 25vw"
+            />
+          </div>
+          {/* Image mobile */}
+          <div className="lg:w-1/2 w-full relative min-h-[300px] lg:block hidden">
+            <Image
+              src={project.imageMobile}
+              alt={`${project.title} - Version Mobile`}
+              fill
+              className="object-contain transition-transform duration-500 group-hover:scale-102 p-4 lg:p-6"
+              sizes="(max-width: 1024px) 100vw, 25vw"
+            />
+          </div>
+        </div>
         <div className="absolute top-4 left-4 flex gap-2 z-10">
           <span className="px-3 py-1 rounded-lg bg-card/90 backdrop-blur border border-border text-xs font-mono font-bold text-accent">
             {project.num}
