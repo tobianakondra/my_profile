@@ -44,6 +44,8 @@ const projects = [
 ];
 
 const ProjectCard = ({ project, index }) => {
+  const isEven = index % 2 === 0;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -51,15 +53,19 @@ const ProjectCard = ({ project, index }) => {
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
       whileHover={{ y: -8 }}
-      className="group relative flex flex-col rounded-2xl bg-card border border-border overflow-hidden transition-all duration-300 hover:border-accent/50 hover:shadow-[0_20px_40px_rgba(29,78,216,0.15)]"
+      className="group relative flex flex-col lg:flex-row rounded-2xl bg-card border border-border overflow-hidden transition-all duration-300 hover:border-accent/50 hover:shadow-[0_20px_40px_rgba(29,78,216,0.15)]"
     >
-      <div className="relative aspect-video bg-primary/50 overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-20 h-20 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center">
-            <span className="text-2xl font-bold text-accent">{project.num}</span>
-          </div>
-        </div>
-        <div className="absolute top-4 left-4 flex gap-2">
+      {/* Image à gauche (sur desktop) ou en haut (mobile) */}
+      <div className="relative lg:w-1/2 w-full min-h-[300px] lg:min-h-[400px] bg-primary/50 overflow-hidden flex-shrink-0">
+        <Image
+          src={project.image}
+          alt={project.title}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          sizes="(max-width: 1024px) 100vw, 50vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/10 to-transparent lg:from-background/95 lg:via-background/5 lg:to-transparent" />
+        <div className="absolute top-4 left-4 flex gap-2 z-10">
           <span className="px-3 py-1 rounded-lg bg-card/90 backdrop-blur border border-border text-xs font-mono font-bold text-accent">
             {project.num}
           </span>
@@ -69,38 +75,41 @@ const ProjectCard = ({ project, index }) => {
         </div>
       </div>
 
-      <div className="p-6 flex flex-col flex-1">
-        <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-accent transition-colors duration-300">
-          {project.title}
-        </h3>
-        <p className="text-muted-fg text-sm leading-relaxed mb-4 flex-1">
-          {project.description}
-        </p>
+      {/* Contenu à droite (sur desktop) ou en bas (mobile) */}
+      <div className="lg:w-1/2 w-full p-6 lg:p-8 flex flex-col justify-between min-h-[300px] lg:min-h-[400px]">
+        <div>
+          <h3 className="text-2xl lg:text-3xl font-semibold text-foreground mb-4 group-hover:text-accent transition-colors duration-300">
+            {project.title}
+          </h3>
+          <p className="text-muted-fg text-base lg:text-lg leading-relaxed mb-6">
+            {project.description}
+          </p>
 
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.stack.map((tech, i) => (
-            <span
-              key={i}
-              className="text-xs font-mono px-2.5 py-1 rounded-lg bg-primary/50 border border-border text-muted-fg group-hover:border-accent/30 group-hover:text-foreground transition-all"
-            >
-              {tech}
-            </span>
-          ))}
+          <div className="flex flex-wrap gap-2 mb-6">
+            {project.stack.map((tech, i) => (
+              <span
+                key={i}
+                className="text-sm font-mono px-3 py-1 rounded-lg bg-primary/50 border border-border text-muted-fg group-hover:border-accent/30 group-hover:text-foreground transition-all"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
 
-        <div className="flex items-center gap-3 border-t border-border pt-4">
+        <div className="flex items-center gap-4 border-t border-border pt-6">
           {project.live ? (
             <Link
               href={project.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-2 text-sm font-medium text-accent hover:underline"
+              className="flex items-center gap-2 text-sm font-medium text-accent hover:underline px-4 py-2"
             >
               Voir en ligne
               <BsArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </Link>
           ) : (
-            <div className="flex-1 flex items-center justify-center gap-2 text-sm font-medium text-muted-fg/50">
+            <div className="flex items-center gap-2 text-sm font-medium text-muted-fg/50 px-4 py-2">
               <span>Projet privé</span>
             </div>
           )}
@@ -110,7 +119,7 @@ const ProjectCard = ({ project, index }) => {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-xl bg-primary/50 border border-border flex items-center justify-center text-muted-fg hover:text-accent hover:border-accent/50 hover:bg-primary transition-all duration-300"
+              className="w-11 h-11 rounded-xl bg-primary/50 border border-border flex items-center justify-center text-muted-fg hover:text-accent hover:border-accent/50 hover:bg-primary transition-all duration-300"
               aria-label="Code source"
             >
               <BsGithub className="w-5 h-5" />
@@ -119,7 +128,7 @@ const ProjectCard = ({ project, index }) => {
             <TooltipProvider delayDuration={100}>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <div className="w-10 h-10 rounded-xl bg-primary/50 border border-border/50 flex items-center justify-center text-muted-fg/50 cursor-not-allowed">
+                  <div className="w-11 h-11 rounded-xl bg-primary/50 border border-border/50 flex items-center justify-center text-muted-fg/50 cursor-not-allowed">
                     <BsGithub className="w-5 h-5" />
                   </div>
                 </TooltipTrigger>
@@ -150,7 +159,7 @@ const Projets = () => {
           <h2 className="h1 text-foreground">Réalisations récentes</h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex flex-col gap-12">
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} index={index} />
           ))}
@@ -165,7 +174,7 @@ const Projets = () => {
         >
           <p className="text-muted-fg mb-4">D'autres projets arrivent bientôt...</p>
           <a
-            href="https://github.com/"
+            href="https://github.com/tobianakondra"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-accent font-medium hover:underline"
