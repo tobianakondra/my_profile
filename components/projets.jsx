@@ -21,6 +21,7 @@ const projects = [
       "La gestion universitaire (emplois du temps, suivi des cours, communication étudiants-enseignants) est souvent fragmentée, peu réactive et manque d'outils modernes centralisés. Conception d'une plateforme web et mobile centralisant la gouvernance académique. Elle permet la synchronisation en temps réel des emplois du temps, le suivi pédagogique et la communication fluide, réduisant le désordre organisationnel et améliorant l'expérience des étudiants et des administrations.",
     stack: ["React", "React Native", "Tailwind CSS", "Firebase", "Temps réel"],
     image: "/assets/universys.png",
+    imageProfessor: "/assets/universys-professor.png",
     imageMobile: "/assets/universys-mobile-student.png",
     live: "",
     github: "",
