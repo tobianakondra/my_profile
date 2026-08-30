@@ -9,7 +9,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { UniversysScreenshotsCard } from "./UniversysScreenshotsCard";
+import { UniversysShowcase } from "./UniversysShowcase";
 import { UniversysSidebar } from "./UniversysSidebar";
 
 const projects = [
@@ -143,23 +143,15 @@ const ProjectCard = ({ project, index }) => {
   );
 };
 
-const UniversysBento = ({ project }) => {
-  const { title } = project;
+const UniversysShowcaseWrapper = ({ project }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8"
-      data-project={title}
     >
-      <div className="lg:col-span-6">
-        <UniversysScreenshotsCard project={project} />
-      </div>
-      <div className="lg:col-span-6">
-        <UniversysSidebar project={project} />
-      </div>
+      <UniversysShowcase project={project} />
     </motion.div>
   );
 };
@@ -180,7 +172,7 @@ const Projets = () => {
         </motion.div>
 
         <div className="flex flex-col gap-12">
-          <UniversysBento project={projects[0]} />
+          <UniversysShowcaseWrapper project={projects[0]} />
 
           {projects.slice(1).map((project, index) => (
             <ProjectCard key={index} project={project} index={index} />
