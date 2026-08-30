@@ -14,17 +14,17 @@ export function UniversysShowcase({ project }) {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-8 lg:gap-12"
     >
-      {/* Left: Compact Images Column */}
-      <div className="space-y-6">
+      {/* Left: Compact Images Column - Desktop only */}
+      <div className="hidden lg:block space-y-6">
         <UniversysDesktopImages project={project} />
       </div>
 
-      {/* Right: Description & Details Column */}
-      <div className="space-y-8">
+      {/* Right: Description & Details Column - Desktop only */}
+      <div className="hidden lg:block space-y-8">
         <UniversysDescriptionCTA project={project} />
       </div>
 
-      {/* Mobile View */}
+      {/* Mobile View - Mobile only */}
       <UniversysMobileView project={project} />
     </motion.div>
   );
