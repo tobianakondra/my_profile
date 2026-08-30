@@ -10,6 +10,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { UniversysShowcase } from "./UniversysShowcase";
+import { LongrichShowcase } from "./LongrichShowcase";
 import { UniversysSidebar } from "./UniversysSidebar";
 
 const projects = [
@@ -28,6 +29,25 @@ const projects = [
   },
   {
     num: "02",
+    category: "E-commerce / Temps réel",
+    title: "Longrich",
+    description:
+      "Le Défi\nLes consommateurs en ligne font souvent face à des parcours d'achat lents, complexes et peu sécurisés, ce qui entraîne un taux d'abandon de panier élevé et une perte de confiance vis-à-vis du vendeur. Pour les vendeurs, la gestion des stocks et la mise à jour des produits en temps réel manquent souvent de réactivité.\n\nLa Solution\nLongrich a été conçue comme une solution e-commerce moderne axée sur la simplicité et la vitesse. L'application offre une interface épurée et intuitive qui guide l'utilisateur sans friction du catalogue jusqu'à la validation de la commande, tout en garantissant une synchronisation instantanée des données.",
+    stack: ["React", "Tailwind CSS", "Firebase"],
+    features: [
+      "Parcours d'achat ultra-fluide : Réduction maximale du nombre d'étapes nécessaires pour finaliser une commande et maximiser la conversion.",
+      "Synchronisation en temps réel : Les stocks, le statut des commandes et le catalogue se rafraîchissent instantanément sans rechargement de page pour l'acheteur et l'administrateur.",
+      "Espace d'administration dédié : Un tableau de bord complet permettant de piloter l'activité, d'ajouter ou modifier des produits, et de suivre l'état de traitement des commandes en quelques clics.",
+      "Design responsive & accessible : Expérience utilisateur fluide et optimisée aussi bien pour les acheteurs sur mobile que pour les administrateurs sur ordinateur.",
+    ],
+    image: "/assets/longrich-home.png",
+    imageCart: "/assets/longrich-cart.png",
+    imageMobile: "/assets/longrich-mobile.png",
+    live: "",
+    github: "",
+  },
+  {
+    num: "03",
     category: "Temps réel / Mobile",
     title: "App collaborative",
     description: "Application mobile cross-platform avec synchronisation temps réel, notifications push et mode hors-ligne.",
@@ -37,7 +57,7 @@ const projects = [
     github: "",
   },
   {
-    num: "03",
+    num: "04",
     category: "Dashboard / Analytics",
     title: "Plateforme analytics",
     description: "Dashboard d'analyse de données avec visualisations interactives, exports automatisés et RBAC avancé.",
@@ -157,6 +177,19 @@ const UniversysShowcaseWrapper = ({ project }) => {
   );
 };
 
+const LongrichShowcaseWrapper = ({ project }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      <LongrichShowcase project={project} />
+    </motion.div>
+  );
+};
+
 const Projets = () => {
   return (
     <section id="projets" className="py-20 lg:py-32 bg-background">
@@ -174,8 +207,9 @@ const Projets = () => {
 
         <div className="flex flex-col gap-12">
           <UniversysShowcaseWrapper project={projects[0]} />
+          <LongrichShowcaseWrapper project={projects[1]} />
 
-          {projects.slice(1).map((project, index) => (
+          {projects.slice(2).map((project, index) => (
             <ProjectCard key={index} project={project} index={index} />
           ))}
         </div>
