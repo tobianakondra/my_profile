@@ -23,7 +23,7 @@ const projects = [
     image: "/assets/universys.png",
     imageProfessor: "/assets/universys-professor.png",
     imageMobile: "/assets/universys-mobile-student.png",
-    live: "",
+    live: "https://universys-3604b.web.app",
     github: "",
   },
   {
