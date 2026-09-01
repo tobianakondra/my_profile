@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/tooltip";
 import { UniversysShowcase } from "./UniversysShowcase";
 import { LongrichShowcase } from "./LongrichShowcase";
+import { RichLabsShowcase } from "./RichLabsShowcase";
 import { UniversysSidebar } from "./UniversysSidebar";
 
 const projects = [
@@ -48,6 +49,24 @@ const projects = [
   },
   {
     num: "03",
+    category: "Éducation / Linux",
+    title: "RichLabs",
+    description:
+      "Le Défi\nPour de nombreux étudiants et débutants en informatique, l'apprentissage de Linux et de l'administration système peut sembler abstrait, intimidant et fragmenté. La diversité des distributions et la complexité des concepts système découragent souvent les apprenants face à des documentations denses et peu interactives.\n\nLa Solution\nRichLabs centralise et démocratise la découverte de l'écosystème Linux à travers une plateforme web immersive et structurée. Elle transforme la prise en main de l'administration système en un parcours guidé, clair et engageant, permettant d'explorer les spécificités des différentes distributions et de se former aux fondamentaux du système.",
+    stack: ["PHP 8.x", "MySQL", "Tailwind CSS", "DaisyUI 5", "Lucide Icons", "Apache"],
+    features: [
+      "Parcours d'apprentissage structuré : Une organisation claire pour maîtriser les concepts clés et les spécificités de chaque distribution Linux sans se perdre.",
+      "Interface moderne & intuitive : Un environnement visuel épuré et réactif conçu pour rendre la documentation technique agréable et accessible.",
+      "Architecture légère & performante : Traitement rapide des requêtes et gestion fluide des données pour garantir une navigation instantanée.",
+    ],
+    image: "/assets/richlabs-home.png",
+    imageDistro: "/assets/richlabs-distro.png",
+    imageMobile: "/assets/richlabs-mobile.png",
+    live: "https://richlabs.free.nf",
+    github: "https://github.com/tobianakondra/richlabs",
+  },
+  {
+    num: "04",
     category: "Temps réel / Mobile",
     title: "App collaborative",
     description: "Application mobile cross-platform avec synchronisation temps réel, notifications push et mode hors-ligne.",
@@ -57,7 +76,7 @@ const projects = [
     github: "",
   },
   {
-    num: "04",
+    num: "05",
     category: "Dashboard / Analytics",
     title: "Plateforme analytics",
     description: "Dashboard d'analyse de données avec visualisations interactives, exports automatisés et RBAC avancé.",
@@ -190,6 +209,19 @@ const LongrichShowcaseWrapper = ({ project }) => {
   );
 };
 
+const RichLabsShowcaseWrapper = ({ project }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      <RichLabsShowcase project={project} />
+    </motion.div>
+  );
+};
+
 const Projets = () => {
   return (
     <section id="projets" className="py-20 lg:py-32 bg-background">
@@ -208,8 +240,9 @@ const Projets = () => {
         <div className="flex flex-col gap-12">
           <UniversysShowcaseWrapper project={projects[0]} />
           <LongrichShowcaseWrapper project={projects[1]} />
+          <RichLabsShowcaseWrapper project={projects[2]} />
 
-          {projects.slice(2).map((project, index) => (
+          {projects.slice(3).map((project, index) => (
             <ProjectCard key={index} project={project} index={index} />
           ))}
         </div>
