@@ -1,5 +1,6 @@
 "use client";
 
+import { BsGithub } from "react-icons/bs";
 import { LongrichFeatures } from "./LongrichFeatures";
 import { LongrichMobilePreview } from "./LongrichMobilePreview";
 
@@ -47,7 +48,7 @@ export function LongrichDescriptionCTA({ project }) {
       <LongrichMobilePreview project={project} />
 
       {/* CTA */}
-      <div className="pt-4 border-t border-border/50">
+      <div className="pt-4 border-t border-border/50 flex flex-col sm:flex-row gap-4">
         {project.live ? (
           <a
             href={project.live}
@@ -60,6 +61,17 @@ export function LongrichDescriptionCTA({ project }) {
         ) : (
           <span className="text-sm font-medium text-muted-fg/50">Projet privé</span>
         )}
+        {project.github ? (
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 text-sm font-medium text-muted-fg hover:text-accent hover:border-accent/50 border border-border px-4 py-3 rounded-lg transition-colors"
+          >
+            <BsGithub className="w-5 h-5" />
+            <span>Voir sur GitHub</span>
+          </a>
+        ) : null}
       </div>
     </div>
   );
