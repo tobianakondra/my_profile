@@ -44,7 +44,7 @@ const projects = [
     imageCart: "/assets/longrich-cart.png",
     imageMobile: "/assets/longrich-mobile.png",
     live: "https://longrich-3212d.web.app",
-    github: "",
+    github: "https://github.com/tobianakondra/Longrich-E-commerce-App",
   },
   {
     num: "03",
