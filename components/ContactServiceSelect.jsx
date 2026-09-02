@@ -22,10 +22,10 @@ const services = [
 export function ContactServiceSelect({ value, onValueChange }) {
   return (
     <Select value={value} onValueChange={onValueChange} className="w-full mb-4">
-      <SelectTrigger className="bg-slate-800/50 border-border text-foreground focus:border-accent rounded-xl transition-all duration-300">
+      <SelectTrigger className="bg-slate-800/50 border-slate-600 border text-foreground focus:border-accent rounded-xl transition-all duration-300">
         <SelectValue placeholder="Type de projet" />
       </SelectTrigger>
-      <SelectContent className="bg-card border-border text-foreground">
+      <SelectContent className="bg-slate-800 border-slate-600 text-foreground">
         <SelectGroup>
           <SelectLabel className="text-accent/70 text-xs">Mes services</SelectLabel>
           {services.map((s) => (
