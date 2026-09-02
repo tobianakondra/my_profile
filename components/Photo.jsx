@@ -38,7 +38,7 @@ const Photo = () => {
         >
           <motion.div className="w-[298px] h-[298px] lg:w-[398px] lg:h-[398px] absolute">
             <Image
-              src="/assets/photo.jpg"
+              src="/assets/Untitled__Edited_-removebg-preview.png"
               priority
               quality={100}
               fill
