@@ -22,7 +22,7 @@ const services = [
 export function ContactServiceSelect({ value, onValueChange }) {
   return (
     <Select value={value} onValueChange={onValueChange} className="w-full mb-4">
-      <SelectTrigger className="bg-primary/50 border-border text-foreground focus:border-accent rounded-xl transition-all duration-300">
+      <SelectTrigger className="bg-slate-800/50 border-border text-foreground focus:border-accent rounded-xl transition-all duration-300">
         <SelectValue placeholder="Type de projet" />
       </SelectTrigger>
       <SelectContent className="bg-card border-border text-foreground">

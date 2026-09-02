@@ -20,7 +20,7 @@ export function ContactFormFields({ formData, handleChange }) {
           value={formData[field.name]}
           onChange={handleChange}
           required={field.required}
-          className="bg-primary/50 border-border text-foreground placeholder:text-muted-fg/50 focus:border-accent focus:ring-0 rounded-xl transition-all duration-300"
+          className="bg-slate-800/50 border-border text-foreground placeholder:text-muted-fg/50 focus:border-accent focus:ring-0 rounded-xl transition-all duration-300"
         />
       ))}
     </div>

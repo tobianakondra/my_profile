@@ -52,7 +52,7 @@ export function ContactForm() {
         value={formData.message}
         onChange={handleChange}
         required
-        className="h-[140px] bg-primary/50 border-border text-foreground placeholder:text-muted-fg/50 focus:border-accent focus:ring-0 rounded-xl resize-none transition-all duration-300 mb-4"
+        className="h-[140px] bg-slate-800/50 border-border text-foreground placeholder:text-muted-fg/50 focus:border-accent focus:ring-0 rounded-xl resize-none transition-all duration-300 mb-4"
       />
 
       <AnimatePresence mode="wait">
