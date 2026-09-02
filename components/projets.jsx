@@ -65,26 +65,6 @@ const projects = [
     live: "https://richlabs.free.nf",
     github: "https://github.com/tobianakondra/richlabs",
   },
-  {
-    num: "04",
-    category: "Temps réel / Mobile",
-    title: "App collaborative",
-    description: "Application mobile cross-platform avec synchronisation temps réel, notifications push et mode hors-ligne.",
-    stack: ["React Native", "Expo", "Firebase", "Supabase", "TypeScript"],
-    image: "/assets/project-placeholder.svg",
-    live: "",
-    github: "",
-  },
-  {
-    num: "05",
-    category: "Dashboard / Analytics",
-    title: "Plateforme analytics",
-    description: "Dashboard d'analyse de données avec visualisations interactives, exports automatisés et RBAC avancé.",
-    stack: ["Next.js", "Node.js", "PostgreSQL", "Recharts", "Docker", "GitHub Actions"],
-    image: "/assets/project-placeholder.svg",
-    live: "",
-    github: "",
-  },
 ];
 
 const ProjectCard = ({ project, index }) => {
@@ -241,10 +221,6 @@ const Projets = () => {
           <UniversysShowcaseWrapper project={projects[0]} />
           <LongrichShowcaseWrapper project={projects[1]} />
           <RichLabsShowcaseWrapper project={projects[2]} />
-
-          {projects.slice(3).map((project, index) => (
-            <ProjectCard key={index} project={project} index={index} />
-          ))}
         </div>
 
         <motion.div
