@@ -22,13 +22,13 @@ export async function POST(request) {
     });
 
     const serviceLabels = {
-      api: "Développement d'API avec Laravel",
-      ui: "Interfaces modernes & responsive",
-      devops: "DevOps & Déploiement",
-      mobile: "Développement mobile",
-      seo: "Référencement SEO & Google Analytics",
-      fullstack: "Développement Fullstack",
-      other: "Autre",
+      fullstack: "Développement Fullstack (React/Next.js/Node.js)",
+      backend: "API & Backend (Node.js, PostgreSQL, Prisma)",
+      realtime: "Temps réel & Collaboratif (Firebase, Supabase)",
+      mobile: "Application Mobile (React Native, Expo)",
+      devops: "DevOps & CI/CD (Docker, GitHub Actions, Vercel)",
+      consulting: "Conseil & Architecture technique",
+      other: "Autre / Projet sur mesure",
     };
 
     const mailOptions = {
